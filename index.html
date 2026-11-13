@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pen</title>
+  </head>
+  <body>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Wish Link helps you discover thoughtful gifts and create personalised greeting cards.">
+  <title>Wish Link — Find a gift. Make it meaningful.</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="logo" href="#home">wishlink <span>♡</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#explore">Explore gifts</a>
+      <a href="#make-card">Make a card</a>
+      <a href="#small-business">Small businesses</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">A LITTLE SOMETHING FOR EVERYONE</p>
+        <h1>Find a gift.<br>Make it meaningful.</h1>
+        <p class="hero-description">
+          Discover thoughtful finds, explore creative products and
+          create personalised digital greetings for every occasion.
+        </p>
+        <a class="primary-button" href="#explore">Explore gifts <span>↗</span></a>
+        <p class="hero-note">Thoughtful finds. Creative moments. Meaningful connections.</p>
+      </div>
+      <div class="hero-art">
+        <div class="gift-illustration">
+          <span class="gift-ribbon">♡</span>
+          <span class="gift-bow">✳</span>
+        </div>
+        <p>A little joy, wrapped with love.</p>
+      </div>
+    </section>
+
+    <section class="section" id="explore">
+      <div class="section-heading">
+        <p class="eyebrow">THE GIFT COLLECTION</p>
+        <h2>Something for everyone</h2>
+        <p>Find a little something that feels just right.</p>
+      </div>
+
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input
+          id="giftSearch"
+          type="search"
+          placeholder="Search gifts, categories or ideas..."
+          autocomplete="off"
+          aria-label="Search gifts"
+        >
+        <button id="clearSearch" type="button" aria-label="Clear search">×</button>
+      </div>
+
+      <div class="filter-row" id="filters">
+        <button class="filter active" type="button" data-category="All">All gifts</button>
+        <button class="filter" type="button" data-category="Accessories">Accessories</button>
+        <button class="filter" type="button" data-category="Stationery">Stationery</button>
+        <button class="filter" type="button" data-category="Decor">Decor</button>
+        <button class="filter" type="button" data-category="Handmade">Handmade</button>
+        <button class="filter" type="button" data-category="Collectibles">Collectibles</button>
+      </div>
+
+      <div class="results-line">
+        <p id="resultCount" aria-live="polite">Loading gift ideas...</p>
+        <button id="resetFilters" class="text-button" type="button">Reset filters</button>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="card-section" id="make-card">
+      <div class="section-heading">
+        <p class="eyebrow">A MESSAGE FROM THE HEART</p>
+        <h2>Create your own greeting card</h2>
+        <p>Choose a theme, write your message and make it yours.</p>
+      </div>
+
+      <div class="card-maker">
+        <div class="card-settings">
+          <label for="recipient">Recipient's name</label>
+          <input id="recipient" type="text" maxlength="35" placeholder="e.g. Alex">
+
+          <label for="occasion">Occasion</label>
+          <select id="occasion">
+            <option>Just because</option>
+            <option>Birthday wishes</option>
+            <option>Thank you</option>
+            <option>Congratulations</option>
+            <option>Best wishes</option>
+            <option>Friendship</option>
+            <option>Get well soon</option>
+          </select>
+
+          <label for="message">Your message</label>
+          <textarea id="message" maxlength="250" rows="4" placeholder="Write something meaningful..."></textarea>
+          <p class="character-count"><span id="charCount">0</span>/250 characters</p>
+
+          <label for="sender">Your name</label>
+          <input id="sender" type="text" maxlength="35" placeholder="Your name">
+
+          <label for="cardTheme">Choose a card colour</label>
+          <select id="cardTheme">
+            <option value="blue">Powder blue</option>
+            <option value="lilac">Soft lilac</option>
+            <option value="pink">Blush pink</option>
+            <option value="cream">Warm cream</option>
+          </select>
+
+          <button id="printCard" class="primary-button full-button" type="button">
+            Print / Save card
+          </button>
+        </div>
+
+        <div class="card-preview-area">
+          <p class="preview-label">YOUR LIVE PREVIEW</p>
+          <article class="greeting-card theme-blue" id="cardPreview">
+            <span class="card-decoration">✦</span>
+            <p class="card-small" id="previewOccasion">Just because</p>
+            <h3>Dear <span id="previewRecipient">Someone special</span>,</h3>
+            <p class="preview-message" id="previewMessage">Your message will appear here...</p>
+            <p class="preview-sender" id="previewSender">With love ♡</p>
+            <span class="card-heart">♡</span>
+          </article>
+          <p class="preview-hint">Your card updates as you type.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="business-section" id="small-business">
+      <div>
+        <p class="eyebrow">MADE WITH CREATIVITY</p>
+        <h2>Small businesses, big dreams.</h2>
+        <p>
+          Discover independent creators and small businesses.
+          Every thoughtful find can help a creative business reach
+          someone new.
+        </p>
+      </div>
+      <div class="business-contact">
+        <span class="business-icon">✿</span>
+        <h3>Are you a small business?</h3>
+        <p>Interested in having your products featured on Wish Link?</p>
+        <a class="primary-button" href="mailto:YOUR_EMAIL@gmail.com?subject=Wish%20Link%20Business%20Enquiry">
+          Get in touch ↗
+        </a>
+        <p class="email-note">Replace the email address with your chosen contact email.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="logo" href="#home">wishlink <span>♡</span></a>
+    <p>Where every thoughtful gift begins with a little idea.</p>
+    <p>© 2026 Wish Link</p>
+  </footer>
+
+</body>
+</html>
+
